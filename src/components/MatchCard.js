@@ -13,7 +13,7 @@ const renderGoals = (goals, isReversed) =>
 
     for (let i = 0; i < goals.length; i++)
     {
-      goalComponents.push(<Goal name={goals[i].name} minute={goals[i].minute} isReversed={isReversed} />)
+      goalComponents.push(<Goal key={goals[i].name + goals[i].score1 + goals[i].score2} name={goals[i].name} minute={goals[i].minute} isReversed={isReversed} />)
     }
 
     return goalComponents;
@@ -63,12 +63,13 @@ const MatchCard = (props) =>
         </span>
 
         <span className={styles.dateInfo}>
+          <p className={styles.stage}>{matchData.stage}</p>
           <p>{matchData.date}</p>
           <p>{matchData.time}</p>
         </span>
 
         <span className={styles.goals}>
-          {renderGoals(matchData.secondTeamGoals, true)}
+          {renderGoals(matchData.secondTeamGoals, false)}
         </span>
       </div>
 

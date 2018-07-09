@@ -8,6 +8,13 @@ html, body
   background: #27ae60;
 }
 
+#root
+{
+  display: grid;
+
+  justify-items: center;
+}
+
 
 
 

@@ -1,11 +1,9 @@
 
 $backgroundColour: #ECF0F1;
-$textColour: #000;
 
 .card
 {
   background: $backgroundColour;
-  color: $textColour;
 
   box-shadow: rgba(0, 0, 0, 0.19) 0px 2.5px 5px 0px, rgba(0, 0, 0, 0.23) -2px 1px 6px 0px;
 
@@ -43,6 +41,8 @@ $textColour: #000;
   text-align: center;
 }
 
-.goals
+.stage
 {
+  font-style: italic;
+  font-weight: bold;
 }

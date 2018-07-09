@@ -1,17 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
 
 $bgColour: #27ae60; //Used in index.css for now as a hard coded value.
+$textColour: #2d3436;
 
 $fontFamily: 'Roboto', sans-serif;
 
 .app
 {
   min-height: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   
   display: grid;
 
-  border: 1px solid red;
+  grid-row-gap: 40px;
 
   font-family: $fontFamily;
+  color: $textColour;
+}
+
+.header
+{
+  display: grid;
+  justify-items: center;
 }
