@@ -11,7 +11,8 @@ class App extends Component
       firstTeam: "Russia",
       secondTeam: "Saudi Arabia",
       score: [5, 0],
-      firstTeamGoals: [{ name: "Gazinsky", minute: "12" }, { name: "Cheryshev", minute: "43" }, { name: "Dzyuba", minute: "71" }, { name: "Cheryshev", minute: "90" }, { name: "Golovin", minute: "90" }]
+      firstTeamGoals: [{ name: "Gazinsky", minute: "12" }, { name: "Cheryshev", minute: "43" }, { name: "Dzyuba", minute: "71" }, { name: "Cheryshev", minute: "90" }, { name: "Golovin", minute: "90" }],
+      secondTeamGoals: [],
       date: "2018-06-14",
       time: "18:00"
     };

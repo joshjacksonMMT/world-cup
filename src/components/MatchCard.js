@@ -1,8 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styles from './MatchCard.scss';
 
 import Goal from './Goal';
+
+
+const renderGoals = (goals, isReversed) =>
+{
+  if (goals.length > 0)
+  {
+    let goalComponents = [];
+
+    for (let i = 0; i < goals.length; i++)
+    {
+      goalComponents.push(<Goal name={goals[i].name} minute={goals[i].minute} isReversed={isReversed} />)
+    }
+
+    return goalComponents;
+  }
+  else
+  {
+    return <p>No Goals 😞</p>;
+  }
+}
 
 const MatchCard = (props) =>
 {
@@ -39,11 +59,7 @@ const MatchCard = (props) =>
       {/* CARD BODY */}
       <div className={styles.body}>
         <span className={styles.goals}>
-          <Goal name="Gazinsky" minute="12" />
-          <Goal name="Cheryshev" minute="43" />
-          <Goal name="Dzyuba" minute="71" />
-          <Goal name="Cheryshev" minute="90" />
-          <Goal name="Golovin" minute="90" />
+          {renderGoals(matchData.firstTeamGoals, false)}
         </span>
 
         <span className={styles.dateInfo}>
@@ -52,6 +68,7 @@ const MatchCard = (props) =>
         </span>
 
         <span className={styles.goals}>
+          {renderGoals(matchData.secondTeamGoals, true)}
         </span>
       </div>
 
