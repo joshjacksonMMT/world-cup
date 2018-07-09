@@ -1,0 +1,29 @@
+
+.goal
+{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  align-items: center;
+  justify-items: center;
+
+  
+}
+.footballImage
+{
+  width: 20px;
+  height: 20px;
+}
+
+.info
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  grid-gap: 10px;
+}
+
+.minute
+{
+  font-weight: bold;
+}
