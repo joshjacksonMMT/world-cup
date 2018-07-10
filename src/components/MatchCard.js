@@ -57,7 +57,6 @@ const MatchCard = (props) =>
         </span>
       </header>
 
-      {console.log(matchData)}
       {/* CARD BODY */}
       <div className={styles.body}>
         <span className={styles.goals}>
