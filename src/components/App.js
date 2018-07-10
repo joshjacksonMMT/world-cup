@@ -7,22 +7,10 @@ import MatchCard from './MatchCard';
 
 class App extends Component
 {
-  mockMatchData =
-    {
-      firstTeam: "Russia",
-      secondTeam: "Saudi Arabia",
-      score: [5, 0],
-      firstTeamGoals: [{ name: "Gazinsky", minute: "12", goalNumber: 1 }, { name: "Cheryshev", minute: "43", goalNumber: 2 }, { name: "Dzyuba", minute: "71", goalNumber: 3 }, { name: "Cheryshev", minute: "90", goalNumber: 4 }, { name: "Golovin", minute: "90", goalNumber: 5 }],
-      secondTeamGoals: [],
-      stage: "Round 1",
-      date: "2018-06-14",
-      time: "18:00"
-    };
-
   state =
     {
-      data: {},
-      round1: []
+      rounds: [],
+      currentRound: 0
     };
 
   round1 = [];
@@ -32,41 +20,40 @@ class App extends Component
     this.getWorldCupData();
   }
 
-
-  initialLoadComplete = false;
-
-  componentDidUpdate()
+  storeRoundData = (data) =>
   {
-    const data = this.state.data;
-
     if (data)
     {
-      let round = [];
-      for (let i = 0; i < data.rounds[1].matches.length; i++)
-      {
-        let match = data.rounds[1].matches[i];
+      let rounds = this.state.rounds;
 
-        round.push(
-          {
-            firstTeam: match.team1.name,
-            secondTeam: match.team2.name,
-            score: [match.score1, match.score2],
-            firstTeamGoals: match.goals1,
-            secondTeamGoals: match.goals2,
-            stage: data.rounds[1].name,
-            date: match.date,
-            time: match.time
-          });
+      for (let i = 0; i < data.rounds.length; i++)
+      {
+        let round = [];
+
+        for (let j = 0; j < data.rounds[i].matches.length; j++)
+        {
+          let match = data.rounds[i].matches[j];
+
+          round.push(
+            {
+              matchNumber: match.num,
+              firstTeam: match.team1.name,
+              secondTeam: match.team2.name,
+              score: [match.score1, match.score2],
+              firstTeamGoals: match.goals1,
+              secondTeamGoals: match.goals2,
+              stage: data.rounds[i].name,
+              date: match.date,
+              time: match.time
+            });
+
+          rounds.push(round);
+        }
       }
 
-      if (!this.initialLoadComplete)
-      {
-        this.setState({ round1: round });
-        this.initialLoadComplete = true;
-      }
+      this.setState({ rounds });
     }
   }
-
 
   getWorldCupData()
   {
@@ -77,26 +64,29 @@ class App extends Component
       })
       .then((response) =>
       {
-        this.setState({ data: response });
+        this.storeRoundData(response);
       });
   }
 
   renderMatchCards = () =>
   {
-    if (this.state.round1.length > 0)
+    if (this.state.rounds.length > 0)
     {
-      let matchCards = [];
-
-      for (let i = 0; i < this.state.round1.length; i++)
+      if (this.state.rounds[this.state.currentRound].length > 0)
       {
-        matchCards.push(<MatchCard matchData={this.state.round1[i]} />);
-      }
+        let matchCards = [];
 
-      return matchCards;
-    }
-    else
-    {
-      return <p>No Matches To Show 😞</p>;
+        for (let i = 0; i < this.state.rounds[this.state.currentRound].length; i++)
+        {
+          matchCards.push(<MatchCard key={this.state.rounds[this.state.currentRound][i].matchNumber} matchData={this.state.rounds[this.state.currentRound][i]} />);
+        }
+
+        return matchCards;
+      }
+      else
+      {
+        return <p>No Matches To Show 😞</p>;
+      }
     }
   }
 
