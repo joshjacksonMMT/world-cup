@@ -40,7 +40,6 @@ const MatchCard = (props) =>
   return (
     <section className={styles.card}>
 
-      {/* CARD HEADER */}
       <header className={styles.header}>
         <span className={styles.teamHeading}>
           <img src="http://www.countryflags.io/ru/flat/64.png" alt="Russian Flag" />
@@ -57,7 +56,6 @@ const MatchCard = (props) =>
         </span>
       </header>
 
-      {/* CARD BODY */}
       <div className={styles.body}>
         <span className={styles.goals}>
           {matchData.firstTeamGoals === null || matchData.firstTeamGoals === undefined ? <p></p> : renderGoals(matchData.firstTeamGoals)}
