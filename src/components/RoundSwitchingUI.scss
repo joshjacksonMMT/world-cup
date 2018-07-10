@@ -3,13 +3,12 @@
 {
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 5px;
 }
 
 .button
 {
-
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -20,7 +19,7 @@
 
     font-size: 18px;
     letter-spacing: 0.5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .empty:hover
