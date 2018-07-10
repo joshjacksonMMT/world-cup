@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styles from './App.scss';
 
 import MatchCard from './MatchCard';
+import RoundSwitchingUI from './RoundSwitchingUI';
 
 
 class App extends Component
@@ -12,13 +13,6 @@ class App extends Component
       rounds: [],
       currentRound: 0
     };
-
-  round1 = [];
-
-  componentDidMount()
-  {
-    this.getWorldCupData();
-  }
 
   storeRoundData = (data) =>
   {
@@ -46,9 +40,8 @@ class App extends Component
               date: match.date,
               time: match.time
             });
-
-          rounds.push(round);
         }
+        rounds.push(round);
       }
 
       this.setState({ rounds });
@@ -90,6 +83,11 @@ class App extends Component
     }
   }
 
+  componentDidMount()
+  {
+    this.getWorldCupData();
+  }
+
   render()
   {
     return (
@@ -97,6 +95,8 @@ class App extends Component
         <header className={styles.header}>
           <h1> World Cup 2018 </h1>
         </header>
+
+        <RoundSwitchingUI maxRounds={this.state.rounds.length} changeRound={(roundNum) => { this.setState({ currentRound: roundNum }) }} />
 
         {this.renderMatchCards()}
       </div>

@@ -5,7 +5,7 @@ import styles from './MatchCard.scss';
 import Goal from './Goal';
 
 
-const renderGoals = (goals, isReversed) =>
+const renderGoals = (goals) =>
 {
   if (goals.length > 0)
   {
@@ -13,13 +13,14 @@ const renderGoals = (goals, isReversed) =>
 
     for (let i = 0; i < goals.length; i++)
     {
-      goalComponents.push(<Goal key={goals[i].name + goals[i].score1 + goals[i].score2} name={goals[i].name} minute={goals[i].minute} isReversed={isReversed} />)
+      goalComponents.push(<Goal key={goals[i].name + goals[i].score1 + goals[i].score2} name={goals[i].name} minute={goals[i].minute} />)
     }
 
     return goalComponents;
   }
   else
   {
+
     return <p>No Goals 😞</p>;
   }
 }
@@ -47,7 +48,7 @@ const MatchCard = (props) =>
         </span>
 
         <span>
-          <h1>{matchData.score[0]} - {matchData.score[1]}</h1>
+          <h1>{matchData.score[0] === null ? "TBD" : matchData.score[0] + "-" + matchData.score[1]}</h1>
         </span>
 
         <span className={styles.teamHeading}>
@@ -56,10 +57,11 @@ const MatchCard = (props) =>
         </span>
       </header>
 
+      {console.log(matchData)}
       {/* CARD BODY */}
       <div className={styles.body}>
         <span className={styles.goals}>
-          {renderGoals(matchData.firstTeamGoals, false)}
+          {matchData.firstTeamGoals === null || matchData.firstTeamGoals === undefined ? <p></p> : renderGoals(matchData.firstTeamGoals)}
         </span>
 
         <span className={styles.dateInfo}>
@@ -69,7 +71,7 @@ const MatchCard = (props) =>
         </span>
 
         <span className={styles.goals}>
-          {renderGoals(matchData.secondTeamGoals, false)}
+          {matchData.secondTeamGoals === null || matchData.secondTeamGoals === undefined ? <p></p> : renderGoals(matchData.secondTeamGoals)}
         </span>
       </div>
 
