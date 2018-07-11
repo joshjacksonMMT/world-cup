@@ -95,6 +95,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "css-hot-loader": "^1.4.0",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3"
   }
