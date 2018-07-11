@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);.App__app___2HcY1 {
+  min-height: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-row-gap: 40px;
+  font-family: "Roboto", sans-serif;
+  color: #2d3436; }
+
+.App__header___1BKdy {
+  display: grid;
+  justify-items: center; }
+.MatchCard__card___3EPSa {
+  background: #ECF0F1;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 2.5px 5px 0px, rgba(0, 0, 0, 0.23) -2px 1px 6px 0px;
+  width: 100%;
+  min-height: 240px; }
+
+.MatchCard__header___3scqT {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center; }
+
+.MatchCard__teamHeading___1N5bc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  font-weight: bold; }
+
+.MatchCard__body___1Pjop {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center; }
+
+.MatchCard__dateInfo___13F3K {
+  text-align: center; }
+
+.MatchCard__stage___3TDUn {
+  font-style: italic;
+  font-weight: bold; }
+.Goal__goal___Og8g0 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center; }
+
+.Goal__footballImage___ylGep {
+  width: 20px;
+  height: 20px; }
+
+.Goal__info___1NQMn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px; }
+
+.Goal__minute___1Nts5 {
+  font-weight: bold; }
+.RoundSwitchingUI__ui___1SdxW {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 5px; }
+
+.RoundSwitchingUI__button___2Gaxo {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                        supported by Chrome and Opera */
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 10px; }
+
+.RoundSwitchingUI__empty___h8qX-:hover {
+  text-decoration: underline;
+  font-weight: bold; }
+
+.RoundSwitchingUI__empty___h8qX-:active {
+  padding-bottom: 2px; }
+
+.RoundSwitchingUI__border___1m2_G {
+  background: #ffffff;
+  outline: 1px solid #353b488f; }
+
+.RoundSwitchingUI__border___1m2_G:hover {
+  outline: 2px solid #353b488f; }
+
+.RoundSwitchingUI__border___1m2_G:active {
+  background: #353b488f; }
+
+.RoundSwitchingUI__raised___3f1Xg {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 2.5px 5px 0px, rgba(0, 0, 0, 0.23) -2px 1px 6px 0px; }
+
+.RoundSwitchingUI__raised___3f1Xg:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 4px 5px 0px, rgba(0, 0, 0, 0.23) -3px 1px 6px 0px; }
+
+.RoundSwitchingUI__raised___3f1Xg:active {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 2px 3px 0px, rgba(0, 0, 0, 0.23) -1px 1px 4px 0px; }
+
+/*# sourceMappingURL=styles.css.map*/
